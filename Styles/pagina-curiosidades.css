@@ -1,106 +1,204 @@
+/* SEÇÃO CURIOSIDADES com imagem de fundo fixa */
+.container-curiosidades {
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+              url('/Assets/Imagem_de_fundo.png') no-repeat center center fixed;
+  background-size: contain;
+  padding: 40px;
+  color: #fff;
+}
+
+.curiosidades-personagens {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #8A0303, #0f064bfa);
+  padding: 40px;
+  color: #fff;
+}
+
 .main-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  gap: 20px;
+  padding: 40px;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* ADICIONADO para quebra responsiva */
+  gap: 20px;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 50px;
+  background: linear-gradient(to right, rgb(127, 2, 2), rgba(80, 3, 3, 0), rgb(65, 64, 64));
+}
+
+.container img {
+  width: 100%;
+  max-width: 200px; /* limita a largura máxima */
+  height: auto;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+
+.container p {
+  margin: 0;
+  font-size: clamp(16px, 4vw, 25px); /* RESPONSIVO */
+  text-align: center;
+}
+
+h1 {
+  color: white;
+  font-size: clamp(30px, 8vw, 96px);
+  text-align: center;
+  font-family: itim;
+  margin: 74px auto 0 auto;
+  text-shadow:
+    2px 2px 0 #000,
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000;
+}
+
+h1::after {
+  content: "";
+  display: block;
+  width: 85%;
+  height: 2px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  margin-top: 5px;
+  margin-bottom: 50px;
+}
+
+.itim-regular {
+  font-family: "Itim", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+p {
+  font-family: itim;
+  color: white;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #000085;
+  background-attachment: fixed;
+  position: relative;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgb(0, 0, 0, 1), rgb(255, 255, 255, 0));
+  opacity: 1;
+  z-index: -1;
+}
+.secao-curiosidades {
+    min-height: 100vh;
+    background: linear-gradient(to right, #800020, #151d46, #9e9301);
+    padding: 40px;
+    color: white;
+  }
+  
+  #filtro-personagens {
     display: flex;
-    flex-direction: column; 
-    gap: 20px; 
-    max-width: 800px; 
-    margin: 0 auto;
-    border-radius: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  #curiosidade-dia {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+  #cards-curiosidades {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 10px;
+  }
+  .card {
+    background: #ffffff10;
+    padding: 20px;
+    border-radius: 12px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  .card img {
+    width: 80px;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  .botao-aleatorio {
+    display: block;
+    margin: 30px auto 0;
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  .botao-aleatorio:hover {
+    transform: scale(1.05);
+  }
+  .filtros button {
+    padding: 10px 15px;
+    border-radius: 6px;
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  .filtros button:hover {
+    background-color: #ddd;
+    transform: scale(1.05);
+  }
+/* RESPONSIVIDADE GERAL */
+@media (max-width: 768px) {
+  .main-container {
+    grid-template-columns: 1fr;
+    padding: 20px;
   }
 
   .container {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center; 
-    gap: 20px; 
-    padding: 20px;
-    border-radius: 15px; 
-    margin-bottom: 50px;
-    background:linear-gradient(to left rgb(127, 2, 2),rgba(80, 3, 3, 0), rgb(65,64,64));
-    background:linear-gradient(to right, rgb(127, 2, 2),rgba(80, 3, 3, 0), rgb(65,64,64));
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   .container img {
-    width: 200px; 
-    border: 2px solid #ccc; 
-    border-radius: 5px; 
+    max-width: 100%;
   }
 
   .container p {
-    margin: 0; 
+    font-size: clamp(14px, 4vw, 22px);
   }
 
-  h1{
-    color: white;
-    font-size: clamp(30px, 8vw, 96px);
-    text-align: center;
-    font-family: itim ;
-    margin: 74px auto 0  auto;
-    text-shadow: 
-      2px 2px 0 #000,  
-      -2px -2px 0 #000,
-      2px -2px 0 #000,
-      -2px 2px 0 #000;
+  .container-curiosidades,
+  .curiosidades-personagens {
+    padding: 20px;
   }
-
-  h1::after{
-    content: "";
-    display: block;
-    width: 85%;
-    height: 2px;
-    margin: 0% auto;
-    background-color: #ffffff;
-    margin-top: 5px;
-    margin-bottom: 50px;
-  }
-
-  .itim-regular {
-    font-family: "Itim", cursive;
-    font-weight: 400;
-    font-style: normal;
-  }
-
-  p{
-
-    font-family: itim ;
-    font-size: 25px;
-    color: white;
-   
-
-  }
-
-  html{
-    height: 100%;
 }
-body{
-   
-    margin: 0;
-    min-height: 100vh;
-    background-color: #000085; /* Define a cor de fundo azul */
-    background-attachment: fixed;
-}
- body::before{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('/Assets/Imagem_de_fundo.png');
-    background-size:contain; /* Ajuste conforme necessário */
-    background-position: center;
-    background-repeat: no-repeat;/* Faz com que a imagem não se repita */
-    background-attachment: fixed;
-    z-index: -2; /* Coloca a imagem atrás do gradiente */
-}
-body::after{
-    content: "";
-    position:fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background:linear-gradient(to top, rgb(0,0,0, 1),rgb(255,255,255,0));
-    background-attachment: fixed;
-    opacity: 100%;
-    z-index: -1;
-}
+
+

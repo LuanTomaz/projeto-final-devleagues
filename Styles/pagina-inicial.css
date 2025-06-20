@@ -53,6 +53,7 @@ body::after{
     font-family: "Itim", cursive;
     font-weight: 40;
     font-style: normal;
+    
 }
 .Titulos::after{
     content: "";

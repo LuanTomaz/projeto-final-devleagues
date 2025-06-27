@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="../Assets/Favicon.png">
     <link rel="stylesheet" href="../Styles/pagina-memes.css"/>
     <link rel="stylesheet" href="../Styles/header.css" >
+    <link rel="stylesheet" href="../Styles/galeria-meme.css">
     <link rel="stylesheet" href="../Styles/footer.css" >
     <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
 </head>
@@ -38,22 +39,40 @@
     </header>
     
     <h1>Memes</h1>
+     <div id="filterButtonsContainer" class="filter-buttons"></div>
+
     <div class="grid-container">
-        <div class="grid-item"><img src="../Assets/Images-Memes/meme1.jpg" ></div>
-        <div class="grid-item"><img src="../Assets/Images-Memes/meme10.jpg" ></div>
-        <div class="grid-item"><img src="../Assets/Images-Memes/meme11.jpg" ></div>
-        <div class="grid-item"><img src="../Assets/Images-Memes/meme12.jpg" ></div>
-        <div class="grid-item"><img src="../Assets/Images-Memes/meme13.jpg" ></div>
-        <div class="grid-item"><img src="../Assets/Images-Memes/meme14.jpg" ></div>
-        <div class="grid-item"><img src="../Assets/Images-Memes/meme15.jpg" ></div>
-        <div class="grid-item"><img src="../Assets/Images-Memes/meme16.jpg" ></div>
-        <div class="grid-item"><img src="../Assets/Images-Memes/meme17.jpg" ></div>
-        <div class="grid-item"><img src="../Assets/Images-Memes/meme2.jpg" ></div>
-        <div class="grid-item"><img src="../Assets/Images-Memes/meme3.jpg" ></div>
-        <div class="grid-item"><img src="../Assets/Images-Memes/meme4.jpg" ></div>
-        <div class="grid-item"><img src="../Assets/Images-Memes/meme6.jpg" ></div>
-        <div class="grid-item"><img src="../Assets/Images-Memes/meme7.jpg" ></div>
+       <!--java script ira gerar-->
     </div>
+
+       <div id="memeFormContainer" class="meme-form-container">
+    <div class="meme-form">
+        <h3>Enviar Novo Meme</h3>
+        <form id="memeForm">
+            <div class="form-group">
+                <label for="memeUrl">URL da Imagem:</label>
+                <input type="text" id="memeUrl" required placeholder="Cole o link da imagem aqui">
+            </div>
+            <div class="form-group">
+                <label for="memeCategory">Categoria:</label>
+                <select id="memeCategory" required>
+                    <option value="humor">Humor</option>
+                    <option value="sarcasmo">Sarcasmo</option>
+                    <option value="nostalgia">Nostalgia</option>
+                </select>
+            </div>
+            <div class="form-buttons">
+                <button type="submit">Enviar</button>
+                <button type="button" id="cancelFormBtn">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    
+    <div id="memeModal" class="modal">
+    <!-- Conteúdo será preenchido pelo JS -->
+    </div>
+    
     
     <footer id="footer">
         <h2>Devs &lt;/&gt;</h2>
@@ -93,5 +112,6 @@
             </div>
         </div>
     </footer>
+    <script src="/Script/galeria-meme.js"></script>
 </body>
 </html>

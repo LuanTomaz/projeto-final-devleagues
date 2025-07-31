@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Coletas - Chaves</title>
+    <link rel="stylesheet" href="../Styles/favoritos.css">
+    <link rel="stylesheet" href="/Styles/footer.css">
+    <link rel="stylesheet" href="../Styles/header.css">
+    <link rel="stylesheet" href="../Styles/minhas-coletas.css">
+    <link rel="stylesheet" href="../Pages/favoritos.html">
+    <link rel="shortcut icon" href="../Assets/Favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header id="Cabeçalho">
+        <a href="../index.html">
+             <img id="img_cbc" src="../Assets/Images-PaginaInicial/Imagem_cabeçalho.png" >
+        </a> 
+        <div id="menu">
+            <a href="../Pages/episodios-classicos.html">
+                <ul id="Sessão">Episódios Clássicos</ul>
+            </a>
+            <a href="../Pages/curiosidades.html">
+                 <ul id="Sessão">Curiosidades</ul>
+            </a>
+            <a href="../Pages/memes.html">
+                <ul id="Sessão">Memes</ul>
+            </a>
+            <a href="../Pages/favoritos.html">
+                <ul id="Sessão">Favoritos</ul>
+            </a>
+        </div>
+        <div id="menu_mob">
+            <span class="linha"></span>
+            <span class="linha"></span>
+            <span class="linha"></span>
+        </div>
+    </header>
+
+    <main>
+        <h1>Minhas Coletas</h1>
+        
+        <div class="resumo-coletas">
+            <div class="contador-coletas">
+                <span id="total-coletas">0</span> itens salvos no total
+            </div>
+            <div class="categorias-contador">
+                <div class="categoria-item">
+                    <span class="categoria-icon">🎬</span>
+                    <span id="episodios-contador">0</span> Episódios
+                </div>
+                <div class="categoria-item">
+                    <span class="categoria-icon">❓</span>
+                    <span id="curiosidades-contador">0</span> Curiosidades
+                </div>
+                <div class="categoria-item">
+                    <span class="categoria-icon">😂</span>
+                    <span id="memes-contador">0</span> Memes
+                </div>
+            </div>
+        </div>
+
+        <div class="filtros-coletas">
+            <button class="filtro-btn active" data-tipo="todos">Todos</button>
+            <button class="filtro-btn" data-tipo="episodio">Episódios</button>
+            <button class="filtro-btn" data-tipo="curiosidade">Curiosidades</button>
+            <button class="filtro-btn" data-tipo="meme">Memes</button>
+        </div>
+
+        <div class="lista-coletas" id="lista-coletas">
+            <!-- Itens serão renderizados via JavaScript -->
+            <p class="sem-coletas">Você ainda não salvou nenhum item. Comece a explorar e salve seus favoritos!</p>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <h2>Devs &lt;/&gt;</h2>
+        <div class="footer-columns">
+            <div class="footer-column">
+                <h3>Camila Santos</h3>
+                <a href="https://www.instagram.com/camyss_santos/">
+                    <img src="../Assets/instagram-icon.png" alt="Instagram" width="24" height="24">
+                    camyss_santos
+                </a>
+                <a href="https://www.linkedin.com/in/camila-santos-486b41253/">
+                    <img src="../Assets/linkedin-icon.png" alt="LinkedIn" width="24" height="24">
+                    Camila Santos
+                </a>
+            </div>
+            <div class="footer-column">
+                <h3>Leonardo Tavares</h3>
+                <a href="https://www.instagram.com/_leonardo_tavares_/">
+                    <img src="../Assets/instagram-icon.png" alt="Instagram" width="24" height="24">
+                    _leonardo_tavares_
+                </a>
+                <a href="https://www.linkedin.com/in/leonardo-tavares-696240289/">
+                    <img src="../Assets/linkedin-icon.png" alt="LinkedIn" width="24" height="24">
+                    Leonardo Tavares
+                </a>
+            </div>
+            <div class="footer-column">
+                <h3>Lauan Victor</h3>
+                <a href="https://instagram.com/lauan.vi_tor/">
+                    <img src="../Assets/instagram-icon.png" alt="Instagram" width="24" height="24">
+                    lauan.vi_tor
+                </a>
+                <a href="https://www.linkedin.com/in/lauan-victor-6886b9198/">
+                    <img src="../Assets/linkedin-icon.png" alt="LinkedIn" width="24" height="24">
+                    Lauan Victor
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/favoritos.js"></script>
+</body>
+</html>

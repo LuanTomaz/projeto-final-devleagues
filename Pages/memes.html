@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="../Assets/Favicon.png">
     <link rel="stylesheet" href="../Styles/pagina-memes.css" />
     <link rel="stylesheet" href="../Styles/header.css">
+    <link rel="stylesheet" href="../Styles/galeria-meme.css">
     <link rel="stylesheet" href="../Styles/footer.css">
     <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
 </head>
@@ -25,112 +26,53 @@
             <a href="../Pages/curiosidades.html">
                 <ul id="Sessão">Curiosidades</ul>
             </a>
-
             <a href="../Pages/memes.html">
                 <ul id="Sessão">Memes</ul>
             </a>
-
             <a href="../Pages/favoritos.html">
                 <ul id="Sessão">Favoritos</ul>
             </a>
-
         </div>
         <div id="menu_mob">
             <span class="linha"></span>
             <span class="linha"></span>
             <span class="linha"></span>
         </div>
-
     </header>
 
     <h1>Memes</h1>
+    <div id="filterButtonsContainer" class="filter-buttons"></div>
+
     <div class="grid-container">
-        <div class="grid-item">
-            <img src="../Assets/Images-Memes/meme1.jpg">
-            <button class="btn-favorito"
-                onclick="salvarFavorito({id: 'meme1', tipo: 'meme', titulo: 'Meme 1', imagem: '../Assets/Images-Memes/meme1.jpg'})">⭐
-                Favoritar</button>
-        </div>
-        <div class="grid-item">
-            <img src="../Assets/Images-Memes/meme10.jpg">
-            <button class="btn-favorito"
-                onclick="salvarFavorito({id: 'meme10', tipo: 'meme', titulo: 'Meme 10', imagem: '../Assets/Images-Memes/meme10.jpg'})">⭐
-                Favoritar</button>
-        </div>
-        <div class="grid-item">
-            <img src="../Assets/Images-Memes/meme11.jpg">
-            <button class="btn-favorito"
-                onclick="salvarFavorito({id: 'meme11', tipo: 'meme', titulo: 'Meme 11', imagem: '../Assets/Images-Memes/meme11.jpg'})">⭐
-                Favoritar</button>
-        </div>
-        <div class="grid-item">
-            <img src="../Assets/Images-Memes/meme12.jpg">
-            <button class="btn-favorito"
-                onclick="salvarFavorito({id: 'meme12', tipo: 'meme', titulo: 'Meme 12', imagem: '../Assets/Images-Memes/meme12.jpg'})">⭐
-                Favoritar</button>
-        </div>
-        <div class="grid-item">
-            <img src="../Assets/Images-Memes/meme13.jpg">
-            <button class="btn-favorito"
-                onclick="salvarFavorito({id: 'meme13', tipo: 'meme', titulo: 'Meme 13', imagem: '../Assets/Images-Memes/meme13.jpg'})">⭐
-                Favoritar</button>
-        </div>
-        <div class="grid-item">
-            <img src="../Assets/Images-Memes/meme14.jpg">
-            <button class="btn-favorito"
-                onclick="salvarFavorito({id: 'meme14', tipo: 'meme', titulo: 'Meme 14', imagem: '../Assets/Images-Memes/meme14.jpg'})">⭐
-                Favoritar</button>
-        </div>
-        <div class="grid-item">
-            <img src="../Assets/Images-Memes/meme15.jpg">
-            <button class="btn-favorito"
-                onclick="salvarFavorito({id: 'meme15', tipo: 'meme', titulo: 'Meme 15', imagem: '../Assets/Images-Memes/meme15.jpg'})">⭐
-                Favoritar</button>
-        </div>
-        <div class="grid-item">
-            <img src="../Assets/Images-Memes/meme16.jpg">
-            <button class="btn-favorito"
-                onclick="salvarFavorito({id: 'meme16', tipo: 'meme', titulo: 'Meme 16', imagem: '../Assets/Images-Memes/meme16.jpg'})">⭐
-                Favoritar</button>
-        </div>
-        <div class="grid-item">
-            <img src="../Assets/Images-Memes/meme17.jpg">
-            <button class="btn-favorito"
-                onclick="salvarFavorito({id: 'meme17', tipo: 'meme', titulo: 'Meme 17', imagem: '../Assets/Images-Memes/meme17.jpg'})">⭐
-                Favoritar</button>
-        </div>
-        <div class="grid-item">
-            <img src="../Assets/Images-Memes/meme2.jpg">
-            <button class="btn-favorito"
-                onclick="salvarFavorito({id: 'meme2', tipo: 'meme', titulo: 'Meme 2', imagem: '../Assets/Images-Memes/meme2.jpg'})">⭐
-                Favoritar</button>
-        </div>
-        <div class="grid-item">
-            <img src="../Assets/Images-Memes/meme3.jpg">
-            <button class="btn-favorito"
-                onclick="salvarFavorito({id: 'meme3', tipo: 'meme', titulo: 'Meme 3', imagem: '../Assets/Images-Memes/meme3.jpg'})">⭐
-                Favoritar</button>
-        </div>
-        <div class="grid-item">
-            <img src="../Assets/Images-Memes/meme4.jpg">
-            <button class="btn-favorito"
-                onclick="salvarFavorito({id: 'meme4', tipo: 'meme', titulo: 'Meme 4', imagem: '../Assets/Images-Memes/meme4.jpg'})">⭐
-                Favoritar</button>
-        </div>
-        <div class="grid-item">
-            <img src="../Assets/Images-Memes/meme6.jpg">
-            <button class="btn-favorito"
-                onclick="salvarFavorito({id: 'meme6', tipo: 'meme', titulo: 'Meme 6', imagem: '../Assets/Images-Memes/meme6.jpg'})">⭐
-                Favoritar</button>
-        </div>
-        <div class="grid-item">
-            <img src="../Assets/Images-Memes/meme7.jpg">
-            <button class="btn-favorito"
-                onclick="salvarFavorito({id: 'meme7', tipo: 'meme', titulo: 'Meme 7', imagem: '../Assets/Images-Memes/meme7.jpg'})">⭐
-                Favoritar</button>
+    </div>
+
+    <div id="memeFormContainer" class="meme-form-container">
+        <div class="meme-form">
+            <h3>Enviar Novo Meme</h3>
+            <form id="memeForm">
+                <div class="form-group">
+                    <label for="memeUrl">URL da Imagem:</label>
+                    <input type="text" id="memeUrl" required placeholder="Cole o link da imagem aqui">
+                </div>
+                <div class="form-group">
+                    <label for="memeCategory">Categoria:</label>
+                    <select id="memeCategory" required>
+                        <option value="humor">Humor</option>
+                        <option value="sarcasmo">Sarcasmo</option>
+                        <option value="nostalgia">Nostalgia</option>
+                    </select>
+                </div>
+                <div class="form-buttons">
+                    <button type="submit">Enviar</button>
+                    <button type="button" id="cancelFormBtn">Cancelar</button>
+                </div>
+            </form>
         </div>
     </div>
 
+    <div id="memeModal" class="modal">
+     
+    </div>
 
     <footer id="footer">
         <h2>Devs &lt;/&gt;</h2>
@@ -171,6 +113,7 @@
         </div>
     </footer>
 
+    <script src="/Script/galeria-meme.js"></script>
     <script src="/js/favoritos.js"></script>
 </body>
 

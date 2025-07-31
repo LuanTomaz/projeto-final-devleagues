@@ -4,7 +4,7 @@ body{
 }
 #Cabeçalho{
     display: grid;
-    width: auto;
+    width: 100%;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
     background-color: #800020;

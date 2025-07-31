@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curiosidades</title>
-    <link rel="stylesheet" href="../Styles/pagina-curiosidades.css"/>
-    <link rel="stylesheet" href="../Styles/header.css" >
-    <link rel="stylesheet" href="../Styles/footer.css" >
+    <link rel="stylesheet" href="../Styles/pagina-curiosidades.css" />
+    <link rel="stylesheet" href="../Styles/header.css">
+    <link rel="stylesheet" href="../Styles/footer.css">
     <link rel="shortcut icon" href="../Assets/Favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
 </head>
@@ -16,58 +17,94 @@
 
     <header id="Cabeçalho">
         <a href="../index.html">
-             <img id="img_cbc" src="../Assets/Images-PaginaInicial/Imagem_cabeçalho.png" >
-        </a> 
+            <img id="img_cbc" src="../Assets/Images-PaginaInicial/Imagem_cabeçalho.png">
+        </a>
         <div id="menu">
             <a href="../Pages/episodios-classicos.html">
                 <ul id="Sessão">Episódios Clássicos</ul>
             </a>
             <a href="../Pages/curiosidades.html">
-                 <ul id="Sessão">Curiosidades</ul>
+                <ul id="Sessão">Curiosidades</ul>
             </a>
-            
+
             <a href="../Pages/memes.html">
                 <ul id="Sessão">Memes</ul>
             </a>
-            
-        </div>
-        <div id="menu_mob">
-            <span class="linha"></span>
-            <span class="linha"></span>
-            <span class="linha"></span>
-        </div>
-        
-    </header>
-    <section>
-          
-        <h1>Curiosidades</h1>
- 
-        <div class="main-container">
-           
-        <div class="container">
-            <img src="../Assets/Images-Curiosidades/walter.jpg">
-            <p>Inspiração Real: O criador Walter Lantz teve a ideia para o personagem após ser incomodado por um Pica-pau durante sua lua de mel. Esse incidente inspirou o comportamento travesso e insistente do personagem.</p>
-            
-        </div>
 
-        <div class="container">
-            <img src="../Assets/Images-Curiosidades/MelBlanc.jpg">
-            <p>Risada Icônica: A famosa risada do Pica-pau foi criada por Mel Blanc, que também deu voz a personagens icônicos como Pernalonga e Patolino. Esta risada se tornou uma das características mais reconhecíveis do personagem.</p>
-           
+            <a href="../Pages/favoritos.html">
+                <ul id="Sessão">Favoritos</ul>
+            </a>
+
+        </div>
+    </header>
+    <section class="container-curiosidades">
+
+        <h1>Curiosidades</h1>
+
+        <div class="main-container">
+
+            <div class="container">
+                <img src="../Assets/Images-Curiosidades/walter.jpg">
+                <p>Inspiração Real: O criador Walter Lantz teve a ideia para o personagem após ser incomodado por um
+                    Pica-pau durante sua lua de mel. Esse incidente inspirou o comportamento travesso e insistente do
+                    personagem.</p>
+                <button onclick="salvarFavorito({
+                    id: 'cur01',
+                    tipo: 'curiosidade',
+                    titulo: 'Inspiração Real',
+                    imagem: '../Assets/Images-Curiosidades/walter.jpg'
+                })">⭐ Favoritar</button>
             </div>
 
-        <div class="container">
-            <img src="../Assets/Images-Curiosidades/fama p.jpg">
-            <p>Primeiro Desenho Animado A Receber uma Estrela na Calçada da Fama: o primeiro 1990, o Pica-Pau se tornou o primeiro personagem de desenho animado a receber uma estrela na Calçada da Fama de Hollywood.</p>
-           
+            <div class="container">
+                <img src="../Assets/Images-Curiosidades/MelBlanc.jpg">
+                <p>Risada Icônica: A famosa risada do Pica-pau foi criada por Mel Blanc, que também deu voz a
+                    personagens icônicos como Pernalonga e Patolino.</p>
+                <button onclick="salvarFavorito({
+                    id: 'cur02',
+                    tipo: 'curiosidade',
+                    titulo: 'Risada Icônica',
+                    imagem: '../Assets/Images-Curiosidades/MelBlanc.jpg'
+                })">⭐ Favoritar</button>
+            </div>
+
+            <div class="container">
+                <img src="../Assets/Images-Curiosidades/fama p.jpg">
+                <p>Primeiro Desenho Animado A Receber uma Estrela na Calçada da Fama: o primeiro 1990, o Pica-Pau se
+                    tornou o primeiro personagem de desenho animado a receber uma estrela na Calçada da Fama de
+                    Hollywood.</p>
+                <button onclick="salvarFavorito({
+                    id: 'cur03',
+                    tipo: 'curiosidade',
+                    titulo: 'fama p',
+                    imagem: '../Assets/Images-Curiosidades/fama p.jpg'
+                })">⭐ Favoritar</button>
+
+            </div>
+
+            <div class="container">
+                <img src="../Assets/Images-Curiosidades/andypanda.jpg">
+                <p>O pica pau originalmente era um antagonista e não um personagem principal, sendo criado apenas para
+                    um episódio do Andy Pandas.</p>
+                <button onclick="salvarFavorito({
+                    id: 'cur04',
+                    tipo: 'curiosidade',
+                    titulo: 'Andy Panda',
+                    imagem: '../Assets/Images-Curiosidades/andypanda.jpg'
+                })">⭐ Favoritar</button>
+
+            </div>
         </div>
 
-        <div class="container">
-            <img src="../Assets/Images-Curiosidades/andypanda.jpg">
-            <p>O pica pau originalmente era um antagonista e não um personagem principal, sendo criado apenas para um episódio do Andy Pandas.</p>
-           
-        </div>
-        </div>
+    </section>
+    <section id="curiosidades-personagens" class="secao-curiosidades">
+        <h1>Curiosidades por Personagem</h1
+            >
+        <div class="filtros" id="filtro-personagens"></div>
+        <div id="curiosidade-dia" class="curiosidade-dia"></div>
+        <div class="cards" id="cards-curiosidades"></div>
+        <button id="botao-aleatorio" class="botao-aleatorio">Quero mais!</button>
+    </section>
 
     </section>
     <footer id="footer">
@@ -108,5 +145,8 @@
             </div>
         </div>
     </footer>
+    <script src="/js/curiosidade.js"></script>
+    <script src="/js/favoritos.js"></script>
 </body>
-</html>
+
+</html>     

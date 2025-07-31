@@ -1,0 +1,311 @@
+html{
+    height: 100%;
+}
+
+body{
+    position: absolute;
+    margin: 0;
+    min-height: 100vh;
+    background-color: #000085; /* Define a cor de fundo azul */
+    background-attachment: fixed;
+}
+ body::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/Assets/Imagem_de_fundo.png');
+    background-size:contain; /* Ajuste conforme necessário */
+    background-position: center;
+    background-repeat: no-repeat;/* Faz com que a imagem não se repita */
+    background-attachment: fixed;
+    z-index: -2; /* Coloca a imagem atrás do gradiente */
+}
+
+body::after{
+    content: "";
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:linear-gradient(to top, rgb(0,0,0, 1),rgb(255,255,255,0));
+    background-attachment: fixed;
+    opacity: 100%;
+    z-index: -1;
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1{
+  color: white;
+  font-size: clamp(30px, 8vw, 96px);
+  text-align: center;
+  font-family: itim ;
+  margin: 74px auto 0  auto;
+  text-shadow: 
+    2px 2px 0 #000,  
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000;
+ }
+h1::after{
+  content: "";
+  display: block;
+  width: 85%;
+  height: 2px;
+  margin: 0% auto 40px;
+  background-color: #ffffff;
+  margin-top: 5px;
+}
+
+/* Resumo das coletas */
+.resumo-coletas {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.contador-coletas {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.contador-coletas span {
+    font-weight: bold;
+    color: #e67e22;
+}
+
+.categorias-contador {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.categoria-item {
+    padding: 10px 15px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    margin: 5px;
+    font-size: 1.1em;
+}
+
+.categoria-item span {
+    font-weight: bold;
+    color: #e67e22;
+}
+
+.categoria-icon {
+    margin-right: 5px;
+}
+
+/* Filtros */
+.filtros-coletas {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filtro-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    background-color: #ddd;
+    cursor: pointer;
+    font-family: 'Itim', cursive;
+    font-size: 1em;
+    transition: all 0.3s;
+}
+
+.filtro-btn:hover {
+    background-color: #ccc;
+}
+
+.filtro-btn.active {
+    background-color: #e67e22;
+    color: white;
+}
+
+/* Lista de coletas */
+.lista-coletas {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 60px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sem-coletas {
+    text-align: center;
+    color: #888;
+    font-size: 1.2em;
+    padding: 30px;
+}
+
+.coleta-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.3s;
+}
+
+.coleta-item:hover {
+    background-color: #f9f9f9;
+}
+
+.coleta-item:last-child {
+    border-bottom: none;
+}
+
+.coleta-imagem {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 15px;
+}
+
+.coleta-info {
+    flex-grow: 1;
+}
+
+.coleta-titulo {
+    font-size: 1.2em;
+    margin: 0 0 5px 0;
+    color: #333;
+}
+
+.coleta-tipo {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    margin-right: 8px;
+}
+
+.tipo-episodio {
+    background-color: #d4e6f1;
+    color: #2980b9;
+}
+
+.tipo-curiosidade {
+    background-color: #e8f8f5;
+    color: #27ae60;
+}
+
+.tipo-meme {
+    background-color: #fdedec;
+    color: #e74c3c;
+}
+
+.coleta-remover {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-family: 'Itim', cursive;
+    transition: background-color 0.3s;
+}
+
+.coleta-remover:hover {
+    background-color: #c0392b;
+}
+
+.coleta-item {
+    width: 300px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    background-color: white;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    display: block;
+}
+
+.coleta-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.titulo-item {
+    font-weight: bold;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.titulo-item.episodio {
+    color: #c99700; /* amarelo queimado */
+}
+
+.titulo-item.curiosidade {
+    color: #1e7f66; /* verde escuro */
+}
+
+.titulo-item.meme {
+    color: #c2185b; /* rosa escuro */
+}
+
+.btn-remover {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-remover:hover {
+    background: #c9302c;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .categorias-contador {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .categoria-item {
+        width: 80%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    
+    .coleta-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .coleta-imagem {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    
+    .coleta-info {
+        margin-bottom: 15px;
+    }
+}

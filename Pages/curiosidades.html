@@ -31,6 +31,10 @@
                 <ul id="Sessão">Memes</ul>
             </a>
 
+            <a href="../Pages/favoritos.html">
+                <ul id="Sessão">Favoritos</ul>
+            </a>
+
         </div>
     </header>
     <section class="container-curiosidades">
@@ -44,15 +48,24 @@
                 <p>Inspiração Real: O criador Walter Lantz teve a ideia para o personagem após ser incomodado por um
                     Pica-pau durante sua lua de mel. Esse incidente inspirou o comportamento travesso e insistente do
                     personagem.</p>
-
+                <button onclick="salvarFavorito({
+                    id: 'cur01',
+                    tipo: 'curiosidade',
+                    titulo: 'Inspiração Real',
+                    imagem: '../Assets/Images-Curiosidades/walter.jpg'
+                })">⭐ Favoritar</button>
             </div>
 
             <div class="container">
                 <img src="../Assets/Images-Curiosidades/MelBlanc.jpg">
                 <p>Risada Icônica: A famosa risada do Pica-pau foi criada por Mel Blanc, que também deu voz a
-                    personagens icônicos como Pernalonga e Patolino. Esta risada se tornou uma das características mais
-                    reconhecíveis do personagem.</p>
-
+                    personagens icônicos como Pernalonga e Patolino.</p>
+                <button onclick="salvarFavorito({
+                    id: 'cur02',
+                    tipo: 'curiosidade',
+                    titulo: 'Risada Icônica',
+                    imagem: '../Assets/Images-Curiosidades/MelBlanc.jpg'
+                })">⭐ Favoritar</button>
             </div>
 
             <div class="container">
@@ -60,6 +73,12 @@
                 <p>Primeiro Desenho Animado A Receber uma Estrela na Calçada da Fama: o primeiro 1990, o Pica-Pau se
                     tornou o primeiro personagem de desenho animado a receber uma estrela na Calçada da Fama de
                     Hollywood.</p>
+                <button onclick="salvarFavorito({
+                    id: 'cur03',
+                    tipo: 'curiosidade',
+                    titulo: 'fama p',
+                    imagem: '../Assets/Images-Curiosidades/fama p.jpg'
+                })">⭐ Favoritar</button>
 
             </div>
 
@@ -67,6 +86,12 @@
                 <img src="../Assets/Images-Curiosidades/andypanda.jpg">
                 <p>O pica pau originalmente era um antagonista e não um personagem principal, sendo criado apenas para
                     um episódio do Andy Pandas.</p>
+                <button onclick="salvarFavorito({
+                    id: 'cur04',
+                    tipo: 'curiosidade',
+                    titulo: 'Andy Panda',
+                    imagem: '../Assets/Images-Curiosidades/andypanda.jpg'
+                })">⭐ Favoritar</button>
 
             </div>
         </div>
@@ -121,6 +146,7 @@
         </div>
     </footer>
     <script src="/js/curiosidade.js"></script>
+    <script src="/js/favoritos.js"></script>
 </body>
 
-</html>
+</html>     

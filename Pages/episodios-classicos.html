@@ -1,68 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Episódios Clássicos</title>
     <link rel="shortcut icon" href="../Assets/Favicon.png">
-    <link rel="stylesheet" href="../Styles/episodios-classicos.css"/>
-    <link rel="stylesheet" href="../Styles/header.css" >
-    <link rel="stylesheet" href="../Styles/footer.css" >
+    <link rel="stylesheet" href="../Styles/episodios-classicos.css" />
+    <link rel="stylesheet" href="../Styles/header.css">
+    <link rel="stylesheet" href="../Styles/footer.css">
     <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header id="Cabeçalho">
         <a href="../index.html">
-             <img id="img_cbc" src="../Assets/Images-PaginaInicial/Imagem_cabeçalho.png" >
-        </a> 
+            <img id="img_cbc" src="../Assets/Images-PaginaInicial/Imagem_cabeçalho.png">
+        </a>
         <div id="menu">
             <a href="../Pages/episodios-classicos.html">
                 <ul id="Sessão">Episódios Clássicos</ul>
             </a>
             <a href="../Pages/curiosidades.html">
-                 <ul id="Sessão">Curiosidades</ul>
+                <ul id="Sessão">Curiosidades</ul>
             </a>
-            
+
             <a href="../Pages/memes.html">
                 <ul id="Sessão">Memes</ul>
             </a>
-            
+
+            <a href="../Pages/favoritos.html">
+                <ul id="Sessão">Favoritos</ul>
+            </a>
+
         </div>
         <div id="menu_mob">
             <span class="linha"></span>
             <span class="linha"></span>
             <span class="linha"></span>
         </div>
-        
+
     </header>
 
     <h1>Episódios Clássicos</h1>
     <div class="container">
         <div class="box">
             <img src="../Assets/Imagens-EpisodiosClassicos/BarbeiroSevilla.jpg" alt="Episódio Barbeiro em Sevilla">
-            <button onclick="window.location.href='https://www.youtube.com/watch?v=UpIz6f6iuDw'">Assistir no YouTube</button>
+            <button onclick="window.location.href='https://www.youtube.com/watch?v=UpIz6f6iuDw'">Assistir no
+                YouTube</button>
+            <button onclick="salvarFavorito({
+                id: 'ep01',
+                tipo: 'episodio',
+                titulo: 'Barbeiro de Sevilla',
+                imagem: '../Assets/Imagens-EpisodiosClassicos/BarbeiroSevilla.jpg'
+            })">⭐ Favoritar</button>
         </div>
+
         <div class="box">
             <img src="../Assets/Imagens-EpisodiosClassicos/AzaresDeUmCorvo.jpg" alt="Episódio Azares de um corvo">
-            <button onclick="window.location.href='https://www.youtube.com/watch?v=NcBb12z0lMg'">Assistir no YouTube</button>
+            <button onclick="window.location.href='https://www.youtube.com/watch?v=NcBb12z0lMg'">Assistir no
+                YouTube</button>
+            <button onclick="salvarFavorito({
+                id: 'ep02',
+                tipo: 'episodio',
+                titulo: 'Azares de um corvo',
+                imagem: '../Assets/Imagens-EpisodiosClassicos/AzaresDeUmCorvo.jpg'
+            })">⭐ Favoritar</button>
         </div>
         <div class="box">
             <img src="../Assets/Imagens-EpisodiosClassicos/PicaPauBiruta.jpg" alt="Episódio Pica-Pau Biruta">
-            <button onclick="window.location.href='https://www.youtube.com/watch?v=f4VLjEdB0Ug'">Assistir no YouTube</button>
+            <button onclick="window.location.href='https://www.youtube.com/watch?v=f4VLjEdB0Ug'">Assistir no
+                YouTube</button>
+            <button onclick="salvarFavorito({
+                id: 'ep03',
+                tipo: 'episodio',
+                titulo: 'Pica-Pau Biruta',
+                imagem: '../Assets/Imagens-EpisodiosClassicos/PicaPauBiruta.jpg'
+            })">⭐ Favoritar</button>
         </div>
         <div class="box">
             <img src="../Assets/Imagens-EpisodiosClassicos/NiagaraFalls.jpg" alt="Episódio Cataratas do Niágara">
-            <button onclick="window.location.href='https://www.youtube.com/watch?v=hL5OkqZ4L7U'">Assistir no YouTube</button>
+            <button onclick="window.location.href='https://www.youtube.com/watch?v=hL5OkqZ4L7U'">Assistir no
+                YouTube</button>
+            <button onclick="salvarFavorito({
+                id: 'ep04',
+                tipo: 'episodio',
+                titulo: 'Cataratas do Niágara',
+                imagem: '../Assets/Imagens-EpisodiosClassicos/NiagaraFalls.jpg'
+            })">⭐ Favoritar</button>
         </div>
         <div class="box">
             <img src="../Assets/Imagens-EpisodiosClassicos/BebeAbutre.jpg" alt="Episódio Bebê Abutre">
-            <button onclick="window.location.href='https://www.youtube.com/watch?v=zqd3yxBIi_A'">Assistir no YouTube</button>
+            <button onclick="window.location.href='https://www.youtube.com/watch?v=zqd3yxBIi_A'">Assistir no
+                YouTube</button>
+            <button onclick="salvarFavorito({
+                id: 'ep05',
+                tipo: 'episodio',
+                titulo: 'Bebê Abutre',
+                imagem: '../Assets/Imagens-EpisodiosClassicos/BebeAbutre.jpg'
+            })">⭐ Favoritar</button>
         </div>
         <div class="box">
-            <img src="../Assets/Imagens-EpisodiosClassicos/AVassouraDaBruxa.jpg" alt="Episódio A Vassou da Bruxa">
-            <button onclick="window.location.href='https://www.youtube.com/watch?v=4qZgTsqCCAs'">Assistir no YouTube</button>
+            <img src="../Assets/Imagens-EpisodiosClassicos/AVassouraDaBruxa.jpg" alt="Episódio A Vassoura da Bruxa">
+            <button onclick="window.location.href='https://www.youtube.com/watch?v=4qZgTsqCCAs'">Assistir no
+                YouTube</button>
+            <button onclick="salvarFavorito({
+                id: 'ep06',
+                tipo: 'episodio',
+                titulo: 'A Vassoura da Bruxa',
+                imagem: '../Assets/Imagens-EpisodiosClassicos/AVassouraDaBruxa.jpg'
+            })">⭐ Favoritar</button>
         </div>
     </div>
 
@@ -104,6 +151,7 @@
             </div>
         </div>
     </footer>
-
+    <script src="/js/favoritos.js"></script>
 </body>
+
 </html>

@@ -65,7 +65,7 @@ h1::after{
   display: grid;
   grid-template-columns: repeat(2, 1fr); 
   grid-template-rows: repeat(5, auto); 
-  gap: 10px; 
+  gap: 60px; 
   padding: 20px;
   justify-content: center; 
   max-width: 800px; 
@@ -77,4 +77,20 @@ h1::after{
   height: 100%; 
   border: 2px solid #3498db; 
   border-radius: 8px; 
+}
+
+.grid-item button {
+    margin-top: 8px;
+    padding: 6px 12px;
+    font-family: 'Itim', cursive;
+    border: none;
+    border-radius: 5px;
+    background-color: #e67e22;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.grid-item button:hover {
+    background-color: #cf5f07;
 }

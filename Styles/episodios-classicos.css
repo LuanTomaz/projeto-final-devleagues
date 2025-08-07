@@ -1,112 +1,184 @@
-#header {
-    width: 100%;
-    background-color: #A62A2A;
+#Cabeçalho {
+  width: 100%;
+  background-color: #A62A2A;
 }
 
 body {
-    margin: 0;
-    min-height: 100vh;
-    background-color: #000085;
-    background-attachment: fixed;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Alinha o conteúdo ao centro horizontalmente */
+  margin: 0;
+  min-height: 100vh;
+  background-color: #000085;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Itim', cursive;
+  position: relative;
 }
 
 body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('/Assets/Imagem_de_fundo.png');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: -2;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/Assets/Imagem_de_fundo.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -2;
 }
 
 body::after {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(255, 255, 255, 0));
-    z-index: -1;
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(255, 255, 255, 0));
+  z-index: -1;
 }
 
 h1 {
-    color: white;
-    display: block;
-    font-size: clamp(30px, 8vw, 96px);
-    text-align: center;
-    margin: 40px 0 10px 0;
-    width: 100%;
-    font-family: itim;
-    text-shadow:
-        2px 2px 0 #000,
-        -2px -2px 0 #000,
-        2px -2px 0 #000,
-        -2px 2px 0 #000;
+  color: white;
+  font-size: clamp(30px, 8vw, 96px);
+  text-align: center;
+  margin: 40px 0 10px 0;
+  width: 100%;
+  text-shadow:
+    2px 2px 0 #000,
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000;
 }
 
 h1::after {
-    content: "";
-    display: block;
-    width: 90%; /* Ajuste conforme necessário */
-    height: 4px; /* Espessura da linha */
-    margin: 10px auto; /* Centraliza e dá espaço acima e abaixo */
-    background-color: #ffffff; /* Cor da linha */
+  content: "";
+  display: block;
+  width: 90%;
+  height: 4px;
+  margin: 10px auto;
+  background-color: #ffffff;
 }
 
 .container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 colunas */
-    grid-template-rows: repeat(3, auto); /* 3 linhas */
-    gap: 20px; /* Espaço entre os quadrados */
-    width: 100%;
-    max-width: 900px; /* Define uma largura máxima */
-    justify-items: center; /* Centraliza os itens dentro de cada célula */
-    justify-content: center; /* Centraliza o contêiner na página */
-    padding: 20px;
-    margin-top: 20px; /* Adiciona espaço acima da grade */
-    margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, auto);
+  gap: 20px;
+  width: 100%;
+  max-width: 900px;
+  justify-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
+
 
 .box {
-    background: linear-gradient(to bottom, rgba(255, 0, 0, 0.8), rgba(0, 0, 255, 0.8)); /* Degradê de vermelho para azul com transparência */
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    padding: 10px;
-    text-align: center;
-    width: 100%;
-    max-width: 300px; /* Limita a largura máxima */
+  background: linear-gradient(to bottom, rgba(255, 0, 0, 0.8), rgba(0, 0, 255, 0.8));
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
 }
 
-img {
-    width: 100%;
-    height: auto;
-    max-height: 150px; /* Controla a altura máxima da imagem */
-    border-radius: 5px;
+.box img {
+  width: 100%;
+  height: auto;
+  max-height: 150px;
+  border-radius: 5px;
 }
 
 button {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #ffcc00; /* Cor amarela */
-    color: white; /* Texto em branco */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-family: 'Itim', cursive;
-    text-shadow: 1px 1px 0 #000; /* Borda preta */
-    font-size: large;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #ffcc00;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Itim', cursive;
+  text-shadow: 1px 1px 0 #000;
+  font-size: large;
+  width: 100%;
+  max-width: 280px;
 }
 
 button:hover {
-    background-color: #ff9900; /* Amarelo mais escuro ao passar o mouse */
+  background-color: #ff9900;
 }
+
+#filtros {
+  margin: 10px auto;
+  max-width: 900px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#filtros label {
+  color: white;
+  font-size: 18px;
+}
+
+#filtros select,
+#filtros button {
+  font-family: 'Itim', cursive;
+  font-size: 16px;
+  padding: 6px 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#filtros button {
+  background-color: #ffcc00;
+  color: black;
+}
+
+#filtros button:hover {
+  background-color: #ff9900;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+  max-width: 90%;
+  max-height: 90%;
+  position: relative;
+}
+
+#closeModal {
+  cursor: pointer;
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+

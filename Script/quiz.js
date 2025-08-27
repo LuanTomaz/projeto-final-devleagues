@@ -85,5 +85,4 @@ function restartQuiz() {
   score = 0;
   loadQuestion();
 }
-
 window.onload = loadQuizData;

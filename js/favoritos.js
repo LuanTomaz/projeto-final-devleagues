@@ -18,10 +18,12 @@ function salvarFavorito(item) {
 
 // Remove um item dos favoritos
 function removerFavorito(id) {
-    const novosFavoritos = getFavoritos().filter(item => item.id !== id);
+    const idNum = Number(id); // converte para número
+    const novosFavoritos = getFavoritos().filter(item => item.id !== idNum);
     localStorage.setItem("favoritosPicaPau", JSON.stringify(novosFavoritos));
     renderizarFavoritos(); // atualiza a lista na tela
 }
+
 
 // Renderiza os favoritos na página
 function renderizarFavoritos() {

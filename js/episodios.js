@@ -1,54 +1,3 @@
-const episodios = [
-  {
-    id: 'ep01',
-    titulo: 'Barbeiro de Sevilla',
-    imagem: '../Assets/Imagens-EpisodiosClassicos/BarbeiroSevilla.jpg',
-    youtube: 'https://www.youtube.com/embed/UpIz6f6iuDw',
-    protagonista: 'Pica-Pau',
-    ano: '1944',
-  },
-  {
-    id: 'ep02',
-    titulo: 'Azares de um corvo',
-    imagem: '../Assets/Imagens-EpisodiosClassicos/AzaresDeUmCorvo.jpg',
-    youtube: 'https://www.youtube.com/embed/NcBb12z0lMg',
-    protagonista: 'Corvo',
-    ano: '1945',
-  },
-  {
-    id: 'ep03',
-    titulo: 'Pica-Pau Biruta',
-    imagem: '../Assets/Imagens-EpisodiosClassicos/PicaPauBiruta.jpg',
-    youtube: 'https://www.youtube.com/embed/f4VLjEdB0Ug',
-    protagonista: 'Pica-Pau',
-    ano: '1946',
-  },
-  {
-    id: 'ep04',
-    titulo: 'Cataratas do Niágara',
-    imagem: '../Assets/Imagens-EpisodiosClassicos/NiagaraFalls.jpg',
-    youtube: 'https://www.youtube.com/embed/hL5OkqZ4L7U',
-    protagonista: 'Outro',
-    ano: '1950',
-  },
-  {
-    id: 'ep05',
-    titulo: 'Bebê Abutre',
-    imagem: '../Assets/Imagens-EpisodiosClassicos/BebeAbutre.jpg',
-    youtube: 'https://www.youtube.com/embed/zqd3yxBIi_A',
-    protagonista: 'Outro',
-    ano: '1952',
-  },
-  {
-    id: 'ep06',
-    titulo: 'A Vassoura da Bruxa',
-    imagem: '../Assets/Imagens-EpisodiosClassicos/AVassouraDaBruxa.jpg',
-    youtube: 'https://www.youtube.com/embed/4qZgTsqCCAs',
-    protagonista: 'Pica-Pau',
-    ano: '1960',
-  },
-];
-
 const container = document.getElementById('containerEpisodios');
 const filtroProtagonista = document.getElementById('filtroProtagonista');
 const filtroAno = document.getElementById('filtroAno');
@@ -56,9 +5,29 @@ const btnSurpreenda = document.getElementById('btnSurpreenda');
 const modal = document.getElementById('modalPlayer');
 const iframePlayer = document.getElementById('player');
 const closeModal = document.getElementById('closeModal');
+const selectDeletar = document.getElementById('delId');
+const selectAtualizar = document.getElementById('upId');
+
+const API_URL = 'http://localhost:3000/episodios';
+
+async function buscarEpisodios() {
+  try {
+    const res = await fetch(API_URL);
+    if (!res.ok) throw new Error(`Erro ${res.status}`);
+    return await res.json();
+  } catch (err) {
+    console.error('Erro ao buscar episódios:', err);
+    return [];
+  }
+}
 
 function renderizarEpisodios(lista) {
   container.innerHTML = '';
+  if (!lista.length) {
+    container.innerHTML = '<p style="color:white;">Nenhum episódio encontrado.</p>';
+    return;
+  }
+
   lista.forEach(ep => {
     const box = document.createElement('div');
     box.className = 'box';
@@ -72,15 +41,14 @@ function renderizarEpisodios(lista) {
   });
 
   document.querySelectorAll('.btnAssistir').forEach(btn => {
-    btn.addEventListener('click', () => {
-      abrirModal(btn.dataset.youtube);
-    });
+    btn.addEventListener('click', () => abrirModal(btn.dataset.youtube));
   });
 
   document.querySelectorAll('.btnFavoritar').forEach(btn => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', async () => {
       const epId = btn.dataset.id;
-      const epSelecionado = episodios.find(e => e.id === epId);
+      const episodios = await buscarEpisodios();
+      const epSelecionado = episodios.find(e => e.id == epId);
       salvarFavorito({
         id: epSelecionado.id,
         titulo: epSelecionado.titulo,
@@ -93,15 +61,19 @@ function renderizarEpisodios(lista) {
 
 function salvarFavorito(item) {
   let favoritos = JSON.parse(localStorage.getItem('favoritosPicaPau')) || [];
-  const jaExiste = favoritos.some(fav => fav.id === item.id && fav.tipo === item.tipo);
-
-  if (!jaExiste) {
+  if (!favoritos.some(fav => fav.id === item.id && fav.tipo === item.tipo)) {
     favoritos.push(item);
     localStorage.setItem('favoritosPicaPau', JSON.stringify(favoritos));
     alert('Episódio favoritado!');
   } else {
     alert('Episódio já está nos favoritos!');
   }
+}
+
+function removerFavorito(id) {
+  let favoritos = JSON.parse(localStorage.getItem('favoritosPicaPau')) || [];
+  favoritos = favoritos.filter(fav => fav.id != id);
+  localStorage.setItem('favoritosPicaPau', JSON.stringify(favoritos));
 }
 
 function abrirModal(youtubeLink) {
@@ -115,28 +87,134 @@ function fecharModal() {
 }
 
 closeModal.addEventListener('click', fecharModal);
-modal.addEventListener('click', e => {
-  if (e.target === modal) fecharModal();
-});
+modal.addEventListener('click', e => { if (e.target === modal) fecharModal(); });
 
-function aplicarFiltros() {
+async function aplicarFiltros() {
   const prot = filtroProtagonista.value;
   const ano = filtroAno.value;
-
-  const filtrados = episodios.filter(ep => {
-    return (prot === '' || ep.protagonista === prot) &&
-           (ano === '' || ep.ano === ano);
-  });
-
+  const episodios = await buscarEpisodios();
+  const filtrados = episodios.filter(ep => (prot === '' || ep.protagonista === prot) && (ano === '' || ep.ano === ano));
   renderizarEpisodios(filtrados);
 }
 
 filtroProtagonista.addEventListener('change', aplicarFiltros);
 filtroAno.addEventListener('change', aplicarFiltros);
 
-btnSurpreenda.addEventListener('click', () => {
+btnSurpreenda.addEventListener('click', async () => {
+  const episodios = await buscarEpisodios();
+  if (!episodios.length) return alert('Nenhum episódio disponível.');
   const aleatorio = episodios[Math.floor(Math.random() * episodios.length)];
   abrirModal(aleatorio.youtube);
 });
 
-renderizarEpisodios(episodios);
+document.getElementById('formAdicionar').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const episodios = await buscarEpisodios();
+  const ultimoId = episodios.length ? Math.max(...episodios.map(ep => ep.id)) : 0;
+
+  const novoEpisodio = {
+    id: ultimoId + 1,
+    titulo: document.getElementById('adTitulo').value,
+    imagem: document.getElementById('adImagem').value,
+    youtube: document.getElementById('adYoutube').value,
+    protagonista: document.getElementById('adProtagonista').value,
+    ano: document.getElementById('adAno').value
+  };
+
+  try {
+    const res = await fetch(API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(novoEpisodio)
+    });
+    if (!res.ok) throw new Error(`Erro ${res.status}`);
+    await atualizarEpisodios();
+    alert(`Episódio "${novoEpisodio.titulo}" adicionado!`);
+  } catch (err) {
+    console.error(err);
+  }
+});
+
+document.getElementById('formAtualizar').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const id = selectAtualizar.value;
+  const episodios = await buscarEpisodios();
+  const epExistente = episodios.find(ep => ep.id == id);
+  if (!epExistente) return alert("Episódio não encontrado!");
+
+  const dadosAtualizados = {
+    titulo: document.getElementById('upTitulo').value || epExistente.titulo,
+    imagem: document.getElementById('upImagem').value || epExistente.imagem,
+    youtube: document.getElementById('upYoutube').value || epExistente.youtube,
+    protagonista: document.getElementById('upProtagonista').value || epExistente.protagonista,
+    ano: document.getElementById('upAno').value || epExistente.ano
+  };
+
+  try {
+    const res = await fetch(`${API_URL}/${id}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: Number(id), ...dadosAtualizados })
+    });
+    if (!res.ok) throw new Error(`Erro ${res.status}`);
+    alert(`Episódio "${dadosAtualizados.titulo}" atualizado!`);
+    await atualizarEpisodios();
+  } catch (err) {
+    console.error(err);
+  }
+});
+
+selectAtualizar.addEventListener('change', async () => {
+  const id = selectAtualizar.value;
+  const episodios = await buscarEpisodios();
+  const ep = episodios.find(e => e.id == id);
+  if (!ep) return;
+  document.getElementById('upTitulo').value = ep.titulo;
+  document.getElementById('upImagem').value = ep.imagem;
+  document.getElementById('upYoutube').value = ep.youtube;
+  document.getElementById('upProtagonista').value = ep.protagonista;
+  document.getElementById('upAno').value = ep.ano;
+});
+
+document.getElementById('formDeletar').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const id = selectDeletar.value;
+  const episodios = await buscarEpisodios();
+  const epParaDeletar = episodios.find(ep => ep.id == id);
+  if (!epParaDeletar) return alert("ID inválido!");
+
+  if (!confirm(`Tem certeza que deseja deletar "${epParaDeletar.titulo}"?`)) return;
+
+  try {
+    const res = await fetch(`${API_URL}/${id}`, { method: 'DELETE' });
+    if (!res.ok) throw new Error(`Erro ${res.status}`);
+    removerFavorito(epParaDeletar.id);
+    alert(`Episódio "${epParaDeletar.titulo}" deletado!`);
+    await atualizarEpisodios();
+  } catch (err) {
+    console.error(err);
+  }
+});
+
+async function atualizarEpisodios() {
+  const lista = await buscarEpisodios();
+  renderizarEpisodios(lista);
+
+  selectDeletar.innerHTML = '';
+  lista.forEach(ep => {
+    const option = document.createElement('option');
+    option.value = ep.id;
+    option.textContent = `ID: ${ep.id} | ${ep.titulo} | Ano: ${ep.ano}`;
+    selectDeletar.appendChild(option);
+  });
+
+  selectAtualizar.innerHTML = '';
+  lista.forEach(ep => {
+    const option = document.createElement('option');
+    option.value = ep.id;
+    option.textContent = `ID: ${ep.id} | ${ep.titulo} | Ano: ${ep.ano}`;
+    selectAtualizar.appendChild(option);
+  });
+}
+
+(async () => { await atualizarEpisodios(); })();

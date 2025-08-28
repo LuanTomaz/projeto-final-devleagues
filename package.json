@@ -4,5 +4,8 @@
   },
   "dependencies": {
     "npm": "^11.5.2"
+  },
+  "scripts": {
+    "json-server": "json-server --watch db.json --port 3000"
   }
 }

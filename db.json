@@ -1,0 +1,52 @@
+{
+  "episodios": [
+    {
+      "id": "2",
+      "titulo": "Azares de um corvo",
+      "imagem": "../Assets/Imagens-EpisodiosClassicos/AzaresDeUmCorvo.jpg",
+      "youtube": "https://www.youtube.com/embed/NcBb12z0lMg",
+      "protagonista": "Corvo",
+      "ano": "1945"
+    },
+    {
+      "id": "3",
+      "titulo": "Pica-Pau Biruta",
+      "imagem": "../Assets/Imagens-EpisodiosClassicos/PicaPauBiruta.jpg",
+      "youtube": "https://www.youtube.com/embed/f4VLjEdB0Ug",
+      "protagonista": "Pica-Pau",
+      "ano": "1946"
+    },
+    {
+      "id": "4",
+      "titulo": "Cataratas do Niágara",
+      "imagem": "../Assets/Imagens-EpisodiosClassicos/NiagaraFalls.jpg",
+      "youtube": "https://www.youtube.com/embed/hL5OkqZ4L7U",
+      "protagonista": "Outro",
+      "ano": "1950"
+    },
+    {
+      "id": "5",
+      "titulo": "Bebê Abutre",
+      "imagem": "../Assets/Imagens-EpisodiosClassicos/BebeAbutre.jpg",
+      "youtube": "https://www.youtube.com/embed/zqd3yxBIi_A",
+      "protagonista": "Outro",
+      "ano": "1952"
+    },
+    {
+      "id": "6",
+      "titulo": "A Vassoura da Bruxa",
+      "imagem": "../Assets/Imagens-EpisodiosClassicos/AVassouraDaBruxa.jpg",
+      "youtube": "https://www.youtube.com/embed/4qZgTsqCCAs",
+      "protagonista": "Pica-Pau",
+      "ano": "1960"
+    },
+    {
+      "id": "1756336010069",
+      "titulo": "The Screwdriver",
+      "imagem": "https://thfvnext.bing.com/th/id/OIP.lRbz313RozHv4DOallCqSQHaEK?w=322&h=180&c=7&r=0&o=7&cb=thfvnext&pid=1.7&rm=3",
+      "youtube": "https://youtu.be/EN0DtsSSelE?si=mmgZ7lOPHJANOU17",
+      "protagonista": "Pica-Pau",
+      "ano": "1941"
+    }
+  ]
+}

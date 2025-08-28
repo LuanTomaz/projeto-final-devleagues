@@ -57,16 +57,53 @@
     <button id="btnSurpreenda">Me Surpreenda</button>
   </div>
 
-  <div class="container" id="containerEpisodios">
+  <div class="container" id="containerEpisodios"></div>
 
-  </div>
-
-  <!--Modal-->
   <div id="modalPlayer" class="modal">
     <div class="modal-content">
       <span id="closeModal">&times;</span>
       <iframe id="player" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
     </div>
+  </div>
+
+  <div id="adminEpisodios">
+    <h2>Gerenciar Episódios</h2>
+
+    <!-- Formulário Adicionar -->
+    <form id="formAdicionar">
+      <h3>Adicionar Episódio</h3>
+      <input type="text" id="adTitulo" placeholder="Título" required>
+      <input type="text" id="adImagem" placeholder="URL da Imagem" required>
+      <input type="text" id="adYoutube" placeholder="Link YouTube" required>
+      <input type="text" id="adProtagonista" placeholder="Protagonista" required>
+      <input type="text" id="adAno" placeholder="Ano" required>
+      <button type="submit">Adicionar</button>
+    </form>
+
+    <!-- Formulário Atualizar -->
+    <form id="formAtualizar">
+      <h3>Atualizar Episódio</h3>
+      <label for="upId">Escolha o episódio:</label>
+      <select id="upId" required>
+        <!-- opções populadas via JS -->
+      </select>
+      <input type="text" id="upTitulo" placeholder="Título (opcional)">
+      <input type="text" id="upImagem" placeholder="URL da Imagem (opcional)">
+      <input type="text" id="upYoutube" placeholder="Link YouTube (opcional)">
+      <input type="text" id="upProtagonista" placeholder="Protagonista (opcional)">
+      <input type="text" id="upAno" placeholder="Ano (opcional)">
+      <button type="submit">Atualizar</button>
+    </form>
+
+    <!-- Formulário Deletar -->
+    <form id="formDeletar">
+      <h3>Deletar Episódio</h3>
+      <label for="delId">Escolha o episódio:</label>
+      <select id="delId" required>
+        <!-- opções populadas via JS -->
+      </select>
+      <button type="submit">Deletar</button>
+    </form>
   </div>
 
   <footer id="footer">

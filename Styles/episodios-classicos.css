@@ -181,4 +181,78 @@ button:hover {
   color: #333;
 }
 
+#adminEpisodios {
+  width: 90%;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 2px solid #ffcc00;
+  border-radius: 12px;
+  color: white;
+  font-family: 'Itim', cursive;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+#adminEpisodios h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 0 #000;
+}
+
+#adminEpisodios h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+
+#adminEpisodios form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #ffcc00;
+}
+
+#adminEpisodios input {
+  flex: 1 1 200px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: none;
+  font-family: 'Itim', cursive;
+  font-size: 16px;
+}
+
+#adminEpisodios button {
+  flex: 1 1 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  background-color: #ffcc00;
+  color: black;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-shadow: 1px 1px 0 #000;
+}
+
+#adminEpisodios button:hover {
+  background-color: #ff9900;
+}
+
+@media (max-width: 600px) {
+  #adminEpisodios form {
+    flex-direction: column;
+  }
+
+  #adminEpisodios input, #adminEpisodios button {
+    width: 100%;
+  }
+}
+
 

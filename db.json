@@ -167,5 +167,22 @@
       "protagonista": "Pica-Pau",
       "ano": "1941"
     }
+  ],
+
+    "memes": [
+    { "id": 1, "src": "../Assets/Images-Memes/meme1.jpg", "likes": 0, "category": "humor", "comments": ["Muito engraçado! KKKKK", "Essa gente inventa cada coisha"] },
+    { "id": 2, "src": "../Assets/Images-Memes/meme2.jpg", "likes": 0, "category": "sarcasmo", "comments": ["Pica pau sendo enganado kkkk", "KKKKKK"] },
+    { "id": 3, "src": "../Assets/Images-Memes/meme3.jpg", "likes": 0, "category": "nostalgia", "comments": ["Me lembra minha infância!", "Clássico!"] },
+    { "id": 4, "src": "../Assets/Images-Memes/meme4.jpg", "likes": 0, "category": "humor", "comments": ["Hahahaha!", "Não tankei!"] },
+    { "id": 6, "src": "../Assets/Images-Memes/meme6.jpg", "likes": 0, "category": "sarcasmo", "comments": ["Eu tô ficando igual", "Desse jeito, a um pé no caps"] },
+    { "id": 7, "src": "../Assets/Images-Memes/meme7.jpg", "likes": 0, "category": "nostalgia", "comments": ["Sonin", "EU kkkkkk"] },
+    { "id": 10, "src": "../Assets/Images-Memes/meme10.jpg", "likes": 0, "category": "humor", "comments": ["Hmmmm", "KKKKKK esse é bom cara"] },
+    { "id": 11, "src": "../Assets/Images-Memes/meme11.jpg", "likes": 0, "category": "sarcasmo", "comments": ["Fatos!", "Nada mais verdadeiro!"] },
+    { "id": 12, "src": "../Assets/Images-Memes/meme12.jpg", "likes": 0, "category": "nostalgia", "comments": ["Pica pau qnd tá produzido", "O que a pessoa n faz qnd tá com fome"] },
+    { "id": 13, "src": "../Assets/Images-Memes/meme13.jpg", "likes": 0, "category": "humor", "comments": ["Morri!", "Kkkkkkk"] },
+    { "id": 14, "src": "../Assets/Images-Memes/meme14.jpg", "likes": 0, "category": "sarcasmo", "comments": ["Mona-Lisa", "Falou tudo!"] },
+    { "id": 15, "src": "../Assets/Images-Memes/meme15.jpg", "likes": 0, "category": "nostalgia", "comments": ["Que saudade!", "Melhor época!"] },
+    { "id": 16, "src": "../Assets/Images-Memes/meme16.jpg", "likes": 0, "category": "humor", "comments": ["A um pé de surtar", "Cadê os resfrecos pica pau"] },
+    { "id": 17, "src": "../Assets/Images-Memes/meme17.jpg", "likes": 0, "category": "sarcasmo", "comments": ["Ele sempre representando", "Pura verdade!"] }
   ]
 }

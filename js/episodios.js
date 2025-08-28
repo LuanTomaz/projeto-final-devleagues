@@ -10,8 +10,6 @@ const selectAtualizar = document.getElementById('upId');
 
 const API_URL = 'http://localhost:3000/episodios';
 
-// -------------------- FUNÇÕES AUXILIARES -------------------- //
-
 async function buscarEpisodios() {
   try {
     const res = await fetch(API_URL);
@@ -91,7 +89,6 @@ function fecharModal() {
 closeModal.addEventListener('click', fecharModal);
 modal.addEventListener('click', e => { if (e.target === modal) fecharModal(); });
 
-// -------------------- FILTROS -------------------- //
 async function aplicarFiltros() {
   const prot = filtroProtagonista.value;
   const ano = filtroAno.value;
@@ -103,7 +100,6 @@ async function aplicarFiltros() {
 filtroProtagonista.addEventListener('change', aplicarFiltros);
 filtroAno.addEventListener('change', aplicarFiltros);
 
-// -------------------- ME SURPREENDA -------------------- //
 btnSurpreenda.addEventListener('click', async () => {
   const episodios = await buscarEpisodios();
   if (!episodios.length) return alert('Nenhum episódio disponível.');
@@ -111,7 +107,6 @@ btnSurpreenda.addEventListener('click', async () => {
   abrirModal(aleatorio.youtube);
 });
 
-// -------------------- ADICIONAR -------------------- //
 document.getElementById('formAdicionar').addEventListener('submit', async (e) => {
   e.preventDefault();
   const episodios = await buscarEpisodios();
@@ -140,7 +135,6 @@ document.getElementById('formAdicionar').addEventListener('submit', async (e) =>
   }
 });
 
-// -------------------- ATUALIZAR -------------------- //
 document.getElementById('formAtualizar').addEventListener('submit', async (e) => {
   e.preventDefault();
   const id = selectAtualizar.value;
@@ -170,7 +164,6 @@ document.getElementById('formAtualizar').addEventListener('submit', async (e) =>
   }
 });
 
-// Preencher campos update ao selecionar
 selectAtualizar.addEventListener('change', async () => {
   const id = selectAtualizar.value;
   const episodios = await buscarEpisodios();
@@ -183,7 +176,6 @@ selectAtualizar.addEventListener('change', async () => {
   document.getElementById('upAno').value = ep.ano;
 });
 
-// -------------------- DELETAR -------------------- //
 document.getElementById('formDeletar').addEventListener('submit', async (e) => {
   e.preventDefault();
   const id = selectDeletar.value;
@@ -204,12 +196,10 @@ document.getElementById('formDeletar').addEventListener('submit', async (e) => {
   }
 });
 
-// -------------------- ATUALIZAR LISTA E SELECTS -------------------- //
 async function atualizarEpisodios() {
   const lista = await buscarEpisodios();
   renderizarEpisodios(lista);
 
-  // Select deletar
   selectDeletar.innerHTML = '';
   lista.forEach(ep => {
     const option = document.createElement('option');
@@ -218,7 +208,6 @@ async function atualizarEpisodios() {
     selectDeletar.appendChild(option);
   });
 
-  // Select atualizar
   selectAtualizar.innerHTML = '';
   lista.forEach(ep => {
     const option = document.createElement('option');
@@ -228,5 +217,4 @@ async function atualizarEpisodios() {
   });
 }
 
-// -------------------- INICIALIZAÇÃO -------------------- //
 (async () => { await atualizarEpisodios(); })();

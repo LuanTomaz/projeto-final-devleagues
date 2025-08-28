@@ -162,21 +162,13 @@
       "youtube": "https://www.youtube.com/embed/4qZgTsqCCAs",
       "protagonista": "Pica-Pau",
       "ano": "1960"
-    },
-    {
-      "id": "1756336010069",
-      "titulo": "The Screwdriver",
-      "imagem": "https://thfvnext.bing.com/th/id/OIP.lRbz313RozHv4DOallCqSQHaEK?w=322&h=180&c=7&r=0&o=7&cb=thfvnext&pid=1.7&rm=3",
-      "youtube": "https://youtu.be/EN0DtsSSelE?si=mmgZ7lOPHJANOU17",
-      "protagonista": "Pica-Pau",
-      "ano": "1941"
     }
   ],
   "memes": [
     {
       "id": "1",
       "src": "../Assets/Images-Memes/meme1.jpg",
-      "likes": 0,
+      "likes": 3,
       "category": "humor",
       "comments": [
         "Muito engraçado! KKKKK",
@@ -196,7 +188,7 @@
     {
       "id": "3",
       "src": "../Assets/Images-Memes/meme3.jpg",
-      "likes": 0,
+      "likes": 3,
       "category": "nostalgia",
       "comments": [
         "Me lembra minha infância!",

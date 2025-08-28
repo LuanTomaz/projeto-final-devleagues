@@ -1,4 +1,123 @@
 {
+  "quiz": [
+    {
+      "id": "1",
+      "image": "../Assets/Imagens-Quiz/picapau.jpg",
+      "options": [
+        "Zeca Urubu",
+        "Picolino",
+        "Pica-Pau",
+        "Andy Panda"
+      ],
+      "answer": "Pica-Pau"
+    },
+    {
+      "id": "2",
+      "image": "../Assets/Imagens-Quiz/zecaurubu.webp",
+      "options": [
+        "Toquinho",
+        "Zeca Urubu",
+        "Pé de Pano",
+        "Wally Walrus"
+      ],
+      "answer": "Zeca Urubu"
+    },
+    {
+      "id": "3",
+      "image": "../Assets/Imagens-Quiz/leoncio.jpg",
+      "options": [
+        "Leôncio",
+        "Zeca Urubu",
+        "Wally Walrus",
+        "Buzz Buzzard"
+      ],
+      "answer": "Leôncio"
+    },
+    {
+      "id": "4",
+      "image": "../Assets/Imagens-Quiz/meany.jpg",
+      "options": [
+        "Meany Ranheta",
+        "Paulina",
+        "Lasquita",
+        "Leôncio"
+      ],
+      "answer": "Meany Ranheta"
+    },
+    {
+      "id": "5",
+      "image": "../Assets/Imagens-Quiz/toquinho.webp",
+      "options": [
+        "Picolino",
+        "Toquinho",
+        "Zeca Urubu",
+        "Andy Panda"
+      ],
+      "answer": "Toquinho"
+    },
+    {
+      "id": "6",
+      "image": "../Assets/Imagens-Quiz/lasquita.webp",
+      "options": [
+        "Lasquita",
+        "Paulina",
+        "Toquinho",
+        "Meany Ranheta"
+      ],
+      "answer": "Lasquita"
+    },
+    {
+      "id": "7",
+      "image": "../Assets/Imagens-Quiz/picolino.webp",
+      "options": [
+        "Paulina",
+        "Picolino",
+        "Wally Walrus",
+        "Buzz Buzzard"
+      ],
+      "answer": "Picolino"
+    },
+    {
+      "id": "8",
+      "image": "../Assets/Imagens-Quiz/zejacare.webp",
+      "options": [
+        "Paulina",
+        "Meany Ranheta",
+        "Zé jacare",
+        "Zeca Urubu"
+      ],
+      "answer": "Zé jacare"
+    },
+    {
+      "id": "9",
+      "image": "../Assets/Imagens-Quiz/pédepano.jpg",
+      "options": [
+        "Pé de Pano",
+        "Buzz Buzzard",
+        "Leôncio",
+        "Andy Panda"
+      ],
+      "answer": "Pé de Pano"
+    }
+  ],
+  "ranking": [
+    {
+      "id": "b832",
+      "pontos": 4
+    },
+    {
+      "id": "e407",
+      "pontos": 4
+    },
+    {
+      "id": "cc93",
+      "pontos": 8
+    },
+    {
+      "id": "b91d",
+      "pontos": 4
+    }
+  ],
   "episodios": [
     {
       "id": "2",

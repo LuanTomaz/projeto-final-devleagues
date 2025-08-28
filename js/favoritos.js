@@ -18,12 +18,14 @@ function salvarFavorito(item) {
 
 // Remove um item dos favoritos
 function removerFavorito(id) {
-    const idNum = Number(id); // converte para número
-    const novosFavoritos = getFavoritos().filter(item => item.id !== idNum);
-    localStorage.setItem("favoritosPicaPau", JSON.stringify(novosFavoritos));
-    renderizarFavoritos(); // atualiza a lista na tela
-}
+    const favoritos = getFavoritos();
 
+    // Aqui garanto que a comparação vai bater tanto se o id for string quanto número
+    const novosFavoritos = favoritos.filter(item => String(item.id) !== String(id));
+
+    localStorage.setItem("favoritosPicaPau", JSON.stringify(novosFavoritos));
+    renderizarFavoritos(); 
+}
 
 // Renderiza os favoritos na página
 function renderizarFavoritos() {
@@ -49,22 +51,22 @@ function renderizarFavoritos() {
         let cor = "";
         if (item.tipo === "episodio") {
             episodios++;
-            cor = "#FFD700"; // amarelo
+            cor = "#FFD700"; 
         } else if (item.tipo === "curiosidade") {
             curiosidades++;
-            cor = "#7FFFD4"; // água-marinha
+            cor = "#7FFFD4"; 
         } else if (item.tipo === "meme") {
             memes++;
-            cor = "#FF69B4"; // rosa
+            cor = "#FF69B4"; 
         }
 
         html += `
-    <div class="coleta-item" data-tipo="${item.tipo}">
-        <button class="btn-remover" onclick="removerFavorito('${item.id}')">×</button>
-        <img src="${item.imagem}" alt="${item.titulo}" />
-        <p class="titulo-item ${item.tipo}">${item.titulo}</p>
-    </div>
-`;
+        <div class="coleta-item" data-tipo="${item.tipo}">
+            <button class="btn-remover" onclick="removerFavorito('${item.id}')">×</button>
+            <img src="${item.imagem}" alt="${item.titulo}" />
+            <p class="titulo-item ${item.tipo}">${item.titulo}</p>
+        </div>
+        `;
     });
 
     lista.innerHTML = html;

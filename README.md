@@ -23,3 +23,7 @@ Css
 *Lauan Victor* <br>
 [Instagram](https://www.instagram.com/lauan.vi_tor/) <br>
 [Linkedin](https://www.linkedin.com/in/lauan-victor-6886b9198/) <br>
+
+*Luan Abreu Tomaz* <br>
+[Instagram](https://www.instagram.com/luan.t0maz/) <br>
+[Linkedin](https://www.linkedin.com/in/luan-tomaz-07854226a/) <br>
